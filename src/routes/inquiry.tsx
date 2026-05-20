@@ -18,6 +18,48 @@ export const Route = createFileRoute("/inquiry")({
 function Inquiry() {
   const [submitted, setSubmitted] = useState(false);
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    
+    // Ambil semua nilai dari form
+    const name = (formData.get("name") as string) || "-";
+    const partner = (formData.get("partner") as string) || "-";
+    const eventType = (formData.get("event") as string) || "-";
+    const eventDate = (formData.get("date") as string) || "-";
+    const venue = (formData.get("venue") as string) || "-";
+    const guests = (formData.get("guests") as string) || "-";
+    const budget = (formData.get("budget") as string) || "-";
+    const ig = (formData.get("ig") as string) || "-";
+    const vision = (formData.get("vision") as string) || "-";
+    const moodboard = (formData.get("moodboard") as string) || "-";
+    
+    // Format pesan WhatsApp (URL encode sudah dilakukan dengan template literal, tapi perlu encodeURIComponent)
+    const message = 
+      `*New Inquiry from Alunara Website*%0a%0a` +
+      `*Name:* ${encodeURIComponent(name)}%0a` +
+      `*Partner:* ${encodeURIComponent(partner)}%0a` +
+      `*Event Type:* ${encodeURIComponent(eventType)}%0a` +
+      `*Event Date:* ${encodeURIComponent(eventDate)}%0a` +
+      `*Venue:* ${encodeURIComponent(venue)}%0a` +
+      `*Guests:* ${encodeURIComponent(guests)}%0a` +
+      `*Budget:* ${encodeURIComponent(budget)}%0a` +
+      `*Instagram:* ${encodeURIComponent(ig)}%0a%0a` +
+      `*Vision:* ${encodeURIComponent(vision)}%0a%0a` +
+      `*Moodboard:* ${encodeURIComponent(moodboard)}`;
+    
+    const phoneNumber = "6287858461888";
+    const waLink = `https://wa.me/${phoneNumber}?text=${message}`;
+    
+    // Buka WhatsApp (new tab)
+    window.open(waLink, "_blank");
+    
+    // Tampilkan ucapan terima kasih di halaman
+    setSubmitted(true);
+  };
+
   return (
     <>
       <section className="pt-44 pb-16 lg:pt-52 lg:pb-20 bg-ivory">
@@ -49,10 +91,7 @@ function Inquiry() {
           ) : (
             <Reveal>
               <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setSubmitted(true);
-                }}
+                onSubmit={handleSubmit}
                 className="border-t border-border pt-16 grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-12"
               >
                 <Field label="Full Name" name="name" required />
