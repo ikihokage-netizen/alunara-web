@@ -8,7 +8,6 @@ import { WordReveal } from "@/components/WordReveal";
 import hero from "@/assets/Gemini_Generated_Image-01.jpg";
 import wedding1 from "@/assets/ANDARA-9158.jpg";
 import wedding2 from "@/assets/RYZ_0515.jpg";
-import details1 from "@/assets/details-1.jpg";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -207,8 +206,7 @@ function Index() {
                   <p className="eyebrow text-clay">14 December 2025 · Dapur Galuh Resto</p>
                   <h3 className="font-serif text-3xl md:text-4xl mt-3">Ara & Duan</h3>
                   <p className="mt-4 text-muted-foreground max-w-md leading-relaxed">
-                    Intimate Garden Celebration
-                    A romantic sunrise wedding surrounded by their closest people.
+                    Intimate Garden Celebration - A romantic sunrise wedding surrounded by their closest people.
                   </p>
                 </div>
               </Link>
@@ -234,17 +232,17 @@ function Index() {
               {
                 n: "01",
                 t: "Full Wedding Planning",
-                d: "From the very first idea to the final embrace — every detail crafted with you, for you.",
+                d: "Thoughtful planning and creative direction from start to celebration— every detail crafted personally for you.",
               },
               {
                 n: "02",
                 t: "Intimate Wedding",
-                d: "Small in number, vast in feeling. Tailored gatherings of those who matter most.",
+                d: "Small in scale, rich in meaning— intentionally designed with much details to share the moment with your closest people.",
               },
               {
                 n: "03",
                 t: "On The Day Coordination",
-                d: "You've planned the dream. We hold every thread so you can simply be present.",
+                d: "You plan the dream, we handle your wedding day to flow seamlessly and beautifully— be present wholeheartedly.",
               },
             ].map((s, i) => (
               <Reveal key={s.n} delay={i * 120}>
@@ -266,9 +264,8 @@ function Index() {
       <section className="py-28 lg:py-40 bg-charcoal text-ivory overflow-hidden">
         <div className="container-editorial">
           <Reveal>
-            <p className="eyebrow text-ivory/50 text-center mb-4">The Love Letter</p>
-            <h2 className="font-serif text-center text-4xl md:text-5xl mb-20">
-              In their words
+            <h2 className="font-eyebrow text-center text-4xl md:text-5xl mb-20">
+              The Love Letter
             </h2>
           </Reveal>
 
@@ -292,14 +289,7 @@ function Index() {
 
       {/* BOTTOM CTA */}
       <section className="relative py-32 lg:py-48 bg-ivory overflow-hidden">
-        <img
-          src={details1}
-          alt=""
-          width={1280}
-          height={1600}
-          loading="lazy"
-          className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-[80%] object-cover opacity-20 hidden md:block"
-        />
+       
         <div className="container-editorial relative">
           <Reveal>
             <div className="max-w-3xl">
@@ -308,7 +298,7 @@ function Index() {
                 Now booking intimate celebrations for 2026.
               </h2>
               <p className="mt-10 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
-                We intentionally accept a limited number of weddings each year — to ensure every couple receives our fullest presence and care.
+                 We intentionally accept a limited number of weddings each year to ensure every couple receives our fullest attention.
               </p>
               <div className="mt-14">
                 <Link to="/inquiry" className="btn-line">
