@@ -26,15 +26,19 @@ export const Route = createFileRoute("/")({
 const TESTIMONIALS = [
   {
     quote: "we dont have time to plan our wedding AT ALL cause we're both too busy with our work. It's a very tight deadline for us, 10 days before the wedding day, we found Alunara; they plan it and save the day. Proven they're so good",
-    author: "Vanny & Wawan",
+    author: "Farah & Dhiska",
   },
   {
-    quote: "It felt less like an event and more like a love letter — written in candlelight, florals, and silence.",
+    quote: "Thank you for being with us from the beginning of 'seeking' to the moment we cannot describe; we really are grateful for everything.Never regret getting to know Alunara, honestly feels like finding new friends. Thank you for always reminding us to stay 'awake' while you were also trying to do so. Good luck for the next bride, anyone!",
     author: "Ara & Duan",
   },
   {
-    quote: "They held our story with such tenderness. We weren't clients — we became family.",
-    author: "Naomi & Reza",
+    quote: "Alunara gave us best vendors of all time! Very much friendly not just to us as the bride&groom, but also to those who works with them. Shoutout to all the vendor and crew for making our wedding go crazy! You all crushed it- couldn't have done it without you! You guys killed it! p.s. let's hangout sometimes.",
+    author: "Vanny & Wawan",
+  },
+  {
+    quote: "A million thank yous for Alunara! We haven’t even reached the wedding day yet, but just from being accompanied through our prewed, fitting session, and decor meetings alone, it has already been this fun and memorable best wedding planner EVER. truly dedicated to Alunara, we love you guys so much see you in September!",
+    author: "The September bride-to-be",
   },
 ];
 
@@ -264,7 +268,7 @@ function Index() {
       <section className="py-28 lg:py-40 bg-charcoal text-ivory overflow-hidden">
         <div className="container-editorial">
           <Reveal>
-            <h2 className="text-center text-4xl md:text-5xl mb-20">
+            <h2 className="font-eyebrow text-center text-4xl md:text-5xl mb-20">
               The Love Letter
             </h2>
           </Reveal>
