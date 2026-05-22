@@ -273,7 +273,6 @@ function Index() {
             {TESTIMONIALS.map((t, i) => (
               <Reveal key={i} delay={i * 150}>
                 <figure className="text-center md:text-left">
-                  <span className="font-serif italic text-7xl text-clay leading-none">"</span>
                   <blockquote className="font-serif text-xl md:text-2xl leading-relaxed mt-2 text-ivory/90">
                     {t.quote}
                   </blockquote>
