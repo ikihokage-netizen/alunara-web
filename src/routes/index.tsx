@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
 
 const TESTIMONIALS = [
   {
-    quote: "Alunara turned our wedding day into a feeling we'll carry forever. Every detail breathed intention.",
+    quote: "we dont have time to plan our wedding AT ALL cause we're both too busy with our work. It's a very tight deadline for us, 10 days before the wedding day, we found Alunara; they plan it and save the day. Proven they're so good",
     author: "Vanny & Wawan",
   },
   {
@@ -264,7 +264,7 @@ function Index() {
       <section className="py-28 lg:py-40 bg-charcoal text-ivory overflow-hidden">
         <div className="container-editorial">
           <Reveal>
-            <h2 className="font-serif text-center text-4xl md:text-5xl mb-20">
+            <h2 className="text-center text-4xl md:text-5xl mb-20">
               The Love Letter
             </h2>
           </Reveal>
@@ -273,7 +273,7 @@ function Index() {
             {TESTIMONIALS.map((t, i) => (
               <Reveal key={i} delay={i * 150}>
                 <figure className="text-center md:text-left">
-                  <blockquote className="font-serif text-xl md:text-2xl leading-relaxed mt-2 text-ivory/90">
+                  <blockquote className="font-serif text-[9px] md:text-[10px] leading-relaxed mt-2 text-ivory/90">
                     {t.quote}
                   </blockquote>
                   <figcaption className="mt-8 text-[11px] uppercase tracking-[0.3em] text-ivory/60">
