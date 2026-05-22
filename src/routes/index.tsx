@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Reveal } from "@/components/Reveal";
 import { Parallax } from "@/components/Parallax";
 import { WordReveal } from "@/components/WordReveal";
-import hero from "@/assets/Gemini_Generated_Image_3kri2b3kri2b3kri.jpg";
+import hero from "@/assets/Gemini_Generated_Image.jpg";
 import wedding1 from "@/assets/ANDARA-9158.jpg";
 import wedding2 from "@/assets/RYZ_0515.jpg";
 import details1 from "@/assets/details-1.jpg";
