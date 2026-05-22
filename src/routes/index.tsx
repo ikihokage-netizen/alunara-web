@@ -6,8 +6,8 @@ import { Reveal } from "@/components/Reveal";
 import { Parallax } from "@/components/Parallax";
 import { WordReveal } from "@/components/WordReveal";
 import hero from "@/assets/Gemini_Generated_Image_3kri2b3kri2b3kri.jpg";
-import wedding1 from "@/assets/ibra-citra-5.jpg";
-import wedding2 from "@/assets/ara-duan-1.jpg";
+import wedding1 from "@/assets/ANDARA-9158.jpg";
+import wedding2 from "@/assets/RYZ_0515.jpg";
 import details1 from "@/assets/details-1.jpg";
 
 if (typeof window !== "undefined") {
@@ -141,9 +141,9 @@ function Index() {
           <WordReveal
             as="p"
             stagger={0.045}
-            className="font-serif text-3xl md:text-5xl lg:text-6xl leading-[1.25] tracking-[-0.01em] text-foreground"
+            className="font-serif text-2xl md:text-4xl lg:text-5xl leading-[1.25] tracking-[-0.01em] text-foreground"
           >
-            At Alunara, we believe weddings should feel deeply personal — thoughtfully curated, emotionally intimate, and beautifully timeless. We create celebrations that are not only elegant to see, but meaningful to experience.
+            At Alunara, we believe every celebration should feel deeply personal — just as meaningful as they are beutiful. Because to us, the most beatiful celebrations are the ones that feel genuinely yours  .
           </WordReveal>
         </div>
       </section>
@@ -159,7 +159,7 @@ function Index() {
                   ref={featHeadingRef}
                   className="font-serif text-4xl md:text-6xl origin-left will-change-transform"
                 >
-                  Recent love stories
+                  Recent Love Stories
                 </h2>
               </div>
               <Link to="/weddings" className="hidden md:inline-flex link-underline text-[11px] uppercase tracking-[0.3em]">
@@ -174,7 +174,7 @@ function Index() {
                 <Parallax speed={-18} className="overflow-hidden">
                   <img
                     src={wedding1}
-                    alt="Ibra & Citra wedding at Pooldeck Grand Qin Hotel"
+                    alt="Vanny & Wawan wedding at La Tare Joglo"
                     width={1280}
                     height={1600}
                     loading="lazy"
@@ -182,10 +182,10 @@ function Index() {
                   />
                 </Parallax>
                 <div className="mt-8">
-                  <p className="eyebrow text-clay">25 December 2025 · Pooldeck Grand Qin Hotel</p>
-                  <h3 className="font-serif text-3xl md:text-4xl mt-3">Ibra & Citra</h3>
+                  <p className="eyebrow text-clay">25 November 2025 · La Tare Joglo</p>
+                  <h3 className="font-serif text-3xl md:text-4xl mt-3">Vanny & Wawan</h3>
                   <p className="mt-4 text-muted-foreground max-w-md leading-relaxed">
-                    A sacred daytime akad — sunlight through ivory drapery and family bound in faith.
+                    Modern Heritage Reception - An intimate evening celebration where modern elegance meets timeless cultural details.
                   </p>
                 </div>
               </Link>
@@ -207,7 +207,8 @@ function Index() {
                   <p className="eyebrow text-clay">14 December 2025 · Dapur Galuh Resto</p>
                   <h3 className="font-serif text-3xl md:text-4xl mt-3">Ara & Duan</h3>
                   <p className="mt-4 text-muted-foreground max-w-md leading-relaxed">
-                    A romantic sunset wedding — gardenias, golden hour, and a first dance with their closest people.
+                    Intimate Garden Celebration
+                    A romantic sunrise wedding surrounded by their closest people.
                   </p>
                 </div>
               </Link>
