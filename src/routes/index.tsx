@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Reveal } from "@/components/Reveal";
 import { Parallax } from "@/components/Parallax";
 import { WordReveal } from "@/components/WordReveal";
-import hero from "@/assets/takmeomeo-heart-529607.jpg";
+import hero from "@/assets/Gemini_Generated_Image_3kri2b3kri2b3kri.jpg";
 import wedding1 from "@/assets/ibra-citra-5.jpg";
 import wedding2 from "@/assets/ara-duan-1.jpg";
 import details1 from "@/assets/details-1.jpg";
@@ -102,7 +102,7 @@ function Index() {
 
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 text-ivory">
           <div className="animate-fade-up" style={{ animationDelay: "200ms" }}>
-            <p className="text-[11px] uppercase tracking-[0.5em] text-ivory/80 mb-8">
+            <p className="text-[12px] uppercase tracking-[0.5em] text-ivory/80 mb-8">
               Borneo, Indonesia
             </p>
             <h1 className="font-serif text-[18vw] md:text-[10vw] leading-[0.85] tracking-[0.05em]">
