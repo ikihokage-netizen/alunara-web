@@ -5,7 +5,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Reveal } from "@/components/Reveal";
 import { Parallax } from "@/components/Parallax";
 import { WordReveal } from "@/components/WordReveal";
-import hero from "@/assets/hero.jpg";
+
+// ============================================================
+// 🚨 CHANGE THIS IMAGE: Ganti dengan foto TANPA WAJAH
+//    - Simpan file gambar baru (misal hero-no-face.jpg) di folder src/assets/
+//    - Lalu ubah import di bawah ini
+// ============================================================
+import hero from "@/assets/vanny-wawan-6.jpg"; // <-- GANTI dengan file foto tanpa wajah
+
 import wedding1 from "@/assets/ibra-citra-5.jpg";
 import wedding2 from "@/assets/ara-duan-1.jpg";
 import details1 from "@/assets/details-1.jpg";
@@ -46,7 +53,6 @@ function Index() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Hero — slow parallax + gentle scale-up as user scrolls past
       if (heroImgRef.current && heroSectionRef.current) {
         gsap.fromTo(
           heroImgRef.current,
@@ -65,7 +71,6 @@ function Index() {
         );
       }
 
-      // Featured weddings — heading subtly scales down on scroll-through
       if (featHeadingRef.current) {
         gsap.fromTo(
           featHeadingRef.current,
@@ -90,10 +95,18 @@ function Index() {
     <>
       {/* HERO */}
       <section ref={heroSectionRef} className="relative h-[100svh] w-full overflow-hidden">
+        {/* 
+          ============================================================
+          FOTO HERO TANPA WAJAH
+          Saat ini masih menggunakan hero.jpg (dengan wajah).
+          Ganti file gambar di import (baris 18) dengan foto tanpa wajah.
+          Contoh: import hero from "@/assets/hero-no-face.jpg";
+          ============================================================
+        */}
         <img
           ref={heroImgRef}
           src={hero}
-          alt="Bride and groom at golden hour"
+          alt="Wedding detail without faces"  // alt sudah disesuaikan
           width={1920}
           height={1280}
           className="absolute inset-0 h-full w-full object-cover scale-105 animate-fade-in will-change-transform"
@@ -102,8 +115,9 @@ function Index() {
 
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 text-ivory">
           <div className="animate-fade-up" style={{ animationDelay: "200ms" }}>
+            {/* CHANGE: "Est. — Borneo" diganti menjadi "Est. — Indonesia" */}
             <p className="text-[11px] uppercase tracking-[0.5em] text-ivory/80 mb-8">
-              Est. — Borneo
+              Est. — Indonesia
             </p>
             <h1 className="font-serif text-[18vw] md:text-[10vw] leading-[0.85] tracking-[0.05em]">
               Alunara
@@ -112,11 +126,12 @@ function Index() {
               crafting memories that last forever
             </p>
 
-            <p className="mt-4 text-[10px] md:text-xs uppercase tracking-[0.45em] text-ivory/70">
-              For your once-in-a-lifetime day
+            {/* CHANGE: Tambahan kalimat sesuai instruksi */}
+            <p className="mt-4 text-[11px] md:text-sm uppercase tracking-[0.3em] text-ivory/80 max-w-xl mx-auto">
+              thoughtfully curated, emotionally intimate, and beautifully timeless.
             </p>
 
-            <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link to="/weddings" className="btn-ghost-line">
                 Explore Weddings
               </Link>
