@@ -43,8 +43,7 @@ export function SiteFooter() {
                   alunaramoment@gmail.com
                 </a>
               </li>
-              {/* CHANGE: Hapus "South Borneo" sesuai instruksi ganti "Borneo, Indonesia" */}
-              <li>Banjarbaru, Indonesia</li>
+              <li>Banjarbaru, South Borneo — Indonesia</li>
             </ul>
 
             <div className="mt-8 flex items-center gap-5 text-ivory/70">
