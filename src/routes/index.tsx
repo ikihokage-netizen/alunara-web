@@ -268,9 +268,9 @@ function Index() {
       <section className="py-28 lg:py-40 bg-charcoal text-ivory overflow-hidden">
         <div className="container-editorial">
           <Reveal>
-            <div className="text-center mb-20">
-              <p className="eyebrow mb-8">The Love Letter</p>
-            </div>
+            <h2 className="font-poppins text-center text-4xl md:text-5xl mb-20">
+              The Love Letter
+            </h2>
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
