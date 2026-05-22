@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Reveal } from "@/components/Reveal";
 import { Parallax } from "@/components/Parallax";
 import { WordReveal } from "@/components/WordReveal";
-import hero from "@/assets/hero.jpg";
+import hero from "@/assets/takmeomeo-heart-529607.jpg";
 import wedding1 from "@/assets/ibra-citra-5.jpg";
 import wedding2 from "@/assets/ara-duan-1.jpg";
 import details1 from "@/assets/details-1.jpg";
@@ -103,17 +103,17 @@ function Index() {
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 text-ivory">
           <div className="animate-fade-up" style={{ animationDelay: "200ms" }}>
             <p className="text-[11px] uppercase tracking-[0.5em] text-ivory/80 mb-8">
-              Est. — Borneo
+              Borneo, Indonesia
             </p>
             <h1 className="font-serif text-[18vw] md:text-[10vw] leading-[0.85] tracking-[0.05em]">
               Alunara
             </h1>
             <p className="mt-8 font-serif italic text-xl md:text-2xl text-ivory/90 max-w-2xl mx-auto">
-              crafting memories that last forever
+              Crafting Memories That Last Forever
             </p>
 
-            <p className="mt-4 text-[10px] md:text-xs uppercase tracking-[0.45em] text-ivory/70">
-              For your once-in-a-lifetime day
+            <p className="mt-4 text-[8px] md:text-xs uppercase tracking-[0.45em] text-ivory/70">
+               Thoughtfully Curated, Emotionally Intimate, and Beautifully Timeless
             </p>
 
             <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4">
