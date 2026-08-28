@@ -96,18 +96,6 @@ function About() {
               </div>
             </Reveal>
 
-            <Reveal>
-              <p className="eyebrow mb-6">Philosophy</p>
-              <h3 className="font-serif text-2xl md:text-4xl leading-snug">
-                Genuine. Intentional. Personal.
-              </h3>
-              <p className="mt-8 text-lg leading-relaxed text-muted-foreground max-w-prose">
-                We will never plan two weddings the same way — because no two
-                loves are the same. Our role is not to impose, but to listen
-                carefully and design quietly around the truth of who you are
-                together.
-              </p>
-            </Reveal>
           </div>
         </div>
       </section>

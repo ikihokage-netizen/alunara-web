@@ -123,12 +123,12 @@ function Index() {
               Alunara
             </h1>
             <p className="mt-8 font-serif italic text-xl md:text-2xl text-ivory/90 max-w-2xl mx-auto">
-              For your once in a lifetime
+              Crafting Memories That Last Forever
             </p>
 
             <p className="mt-4 text-[8px] md:text-xs uppercase tracking-[0.45em] text-ivory/70">
-              Thoughtfully Curated, Emotionally Intimate, and Beautifully
-              Timeless
+              thoughtfully curated, emotionally intimate, and beautifully
+              timeless
             </p>
 
             <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4">

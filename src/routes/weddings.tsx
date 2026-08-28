@@ -152,26 +152,20 @@ function Weddings() {
               </div>
             </Reveal>
 
-            {/* Masonry grid */}
+            {/* Photo grid */}
             <div className="grid grid-cols-2 md:grid-cols-6 gap-3 md:gap-5">
               {w.images.map((src, i) => {
-                const spans = [
-                  "col-span-2 md:col-span-4 row-span-2 aspect-[4/3]",
-                  "col-span-2 md:col-span-2 aspect-[3/4]",
-                  "col-span-1 md:col-span-2 aspect-square",
-                  "col-span-1 md:col-span-2 aspect-square",
-                  "col-span-2 md:col-span-2 aspect-[3/4]",
-                  "col-span-2 md:col-span-3 aspect-[4/3]",
-                  "col-span-2 md:col-span-3 aspect-[4/3]",
-                  "col-span-1 md:col-span-2 aspect-square",
-                  "col-span-1 md:col-span-2 aspect-square",
-                ];
+                const isHero = i === 0;
                 const crop = CROPS[src];
                 return (
                   <Reveal
                     key={i}
                     delay={i * 60}
-                    className={spans[i % spans.length]}
+                    className={
+                      isHero
+                        ? "col-span-2 md:col-span-6 aspect-[16/10] md:aspect-[21/10]"
+                        : "col-span-1 md:col-span-2 aspect-square"
+                    }
                   >
                     <div
                       className="overflow-hidden h-full w-full"

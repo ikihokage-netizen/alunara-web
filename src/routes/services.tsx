@@ -60,7 +60,7 @@ const SERVICES = [
   },
   {
     t: "Custom Celebrations",
-    d: "Every celebration tells a different story. We offer personalized planning and styling tailored to your vision, atmosphere, and meaningful moments. As Alunara, we believe every celebration deserves to feel personal, intentional, and beautifully unforgettable. More than simply planning events, we create experiences filled with emotion, warmth, and memories that last forever.",
+    d: "Every celebration tells a different story. We offer personalized planning and styling tailored to your vision, atmosphere, and meaningful moments.",
   },
 ];
 
@@ -122,8 +122,10 @@ function Services() {
         <div className="container-editorial text-center max-w-4xl">
           <Reveal>
             <p className="font-serif italic text-3xl md:text-5xl lg:text-6xl leading-[1.25] text-foreground">
-              "More than simply planning events, we create experiences filled
-              with emotion, warmth, and memories that last forever."
+              At Alunara, we believe every celebration deserves to feel
+              personal, intentional, and beautifully unforgettable. More than
+              simply planning events, we create experiences filled with
+              emotion, warmth, and memories that last forever.
             </p>
             <div className="mt-16">
               <Link to="/inquiry" className="btn-line">
