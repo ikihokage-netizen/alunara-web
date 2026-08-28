@@ -6,7 +6,7 @@ import fd3 from "@/assets/farah-dhiska-3.jpg";
 import fd4 from "@/assets/farah-dhiska-4.jpg";
 import fd5 from "@/assets/farah-dhiska-5.jpg";
 import fd6 from "@/assets/farah-dhiska-6.jpg";
-import fd7 from "@/assets/farah-dhiska-7.jpg";
+import fd8 from "@/assets/farah-dhiska-8.jpg";
 import ad1 from "@/assets/ara-duan-1.jpg";
 import ad2 from "@/assets/ara-duan-2.jpg";
 import ad3 from "@/assets/ara-duan-3.jpg";
@@ -14,15 +14,17 @@ import ad4 from "@/assets/ara-duan-4.jpg";
 import ad5 from "@/assets/ara-duan-5.jpg";
 import ad6 from "@/assets/ara-duan-6.jpg";
 import ad7 from "@/assets/ara-duan-7.jpg";
-import vw1 from "@/assets/vanny-wawan-1.jpg";
-import vw2 from "@/assets/vanny-wawan-2.jpg";
-import vw3 from "@/assets/vanny-wawan-3.jpg";
-import vw4 from "@/assets/vanny-wawan-4.jpg";
-import vw5 from "@/assets/vanny-wawan-5.jpg";
-import vw6 from "@/assets/vanny-wawan-6.jpg";
-import vw7 from "@/assets/vanny-wawan-7.jpg";
-import vw8 from "@/assets/vanny-wawan-8.jpg";
-import vw9 from "@/assets/vanny-wawan-9.jpg";
+import vw1 from "@/assets/vanny-wawan (1).jpg";
+import vw2 from "@/assets/vanny-wawan (2).jpg";
+import vw3 from "@/assets/vanny-wawan (3).jpg";
+import vw4 from "@/assets/vanny-wawan (4).jpg";
+import vw5 from "@/assets/vanny-wawan (5).jpg";
+import vw6 from "@/assets/vanny-wawan (6).jpg";
+import vw7 from "@/assets/vanny-wawan (7).jpg";
+import vw8 from "@/assets/vanny-wawan (8).jpg";
+import vw9 from "@/assets/vanny-wawan (9).jpg";
+import vw10 from "@/assets/vanny-wawan (10).jpg";
+import vw11 from "@/assets/vanny-wawan (11).jpg";
 import ic1 from "@/assets/ibra-citra-1.jpg";
 import ic2 from "@/assets/ibra-citra-2.jpg";
 import ic3 from "@/assets/ibra-citra-3.jpg";
@@ -59,6 +61,8 @@ type Wedding = {
   venue: string;
   story: string;
   caption?: string;
+  top?: number;
+  fullBodyLast?: boolean;
   images: string[];
 };
 
@@ -79,6 +83,7 @@ const WEDDINGS: Wedding[] = [
     story:
       "A romantic sunset wedding at Dapur Galuh Resto — gardenias, golden hour, and a first dance shared with their closest people.",
     images: [ad1, ad2, ad3, ad4, ad5, ad6, ad7],
+    fullBodyLast: true,
   },
   {
     couple: "Vanny & Wawan",
@@ -86,7 +91,8 @@ const WEDDINGS: Wedding[] = [
     venue: "La Tare Joglo",
     story:
       "An intimate evening reception beneath the wooden beams of La Tare Joglo — long ivory tablescapes, candlelight, and the quiet warmth of heritage architecture.",
-    images: [vw1, vw2, vw3, vw4, vw5, vw6, vw7, vw8, vw9],
+    top: 2,
+    images: [vw3, vw5, vw1, vw2, vw4, vw6, vw7, vw8, vw9, vw10, vw11],
   },
   {
     couple: "Farah & Dhiska",
@@ -95,7 +101,7 @@ const WEDDINGS: Wedding[] = [
     story:
       "A graceful daytime celebration held within the timeless interiors of Swiss Belhotel Borneo — soft florals, ivory linens, and the gentle hum of family gathered close.",
     caption: "Officially forever",
-    images: [fd1, fd2, fd3, fd4, fd5, fd6, fd7],
+    images: [fd1, fd2, fd3, fd4, fd5, fd6, fd8],
   },
 ];
 
@@ -105,8 +111,6 @@ type Crop = {
 };
 
 const CROPS: Record<string, Crop> = {
-  [vw1]: { zoom: 1.24, objectPosition: "47% 42%" },
-  [vw3]: { zoom: 1.18, objectPosition: "48% 40%" },
   [fd6]: { zoom: 1.08, objectPosition: "50% 30%" },
   [ad1]: { zoom: 1.12, objectPosition: "50% 32%" },
   [ic1]: { zoom: 1.16, objectPosition: "45% 38%" },
@@ -155,15 +159,26 @@ function Weddings() {
               </div>
             </Reveal>
 
-            {/* Featured photo + grid */}
+            {/* Featured photos + grid */}
             <Reveal>
-              <div className="flex justify-center">
-                <img
-                  src={w.images[0]}
-                  alt={`${w.couple} — featured`}
-                  loading="lazy"
-                  className="h-auto max-h-[85vh] w-auto max-w-full"
-                />
+              <div
+                className={
+                  w.top === 2 ? "grid grid-cols-2 gap-4 md:gap-6" : "flex justify-center"
+                }
+              >
+                {w.images.slice(0, w.top ?? 1).map((src, i) => (
+                  <img
+                    key={i}
+                    src={src}
+                    alt={`${w.couple} — featured ${i + 1}`}
+                    loading="lazy"
+                    className={
+                      w.top === 2
+                        ? "h-auto max-h-[85vh] w-full object-contain"
+                        : "h-auto max-h-[85vh] w-auto max-w-full"
+                    }
+                  />
+                ))}
               </div>
               {w.caption ? (
                 <p className="mt-8 text-center text-[10px] uppercase tracking-[0.4em] text-muted-foreground">
@@ -173,11 +188,16 @@ function Weddings() {
             </Reveal>
 
             <div className="mt-16 md:mt-24 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-              {w.images.slice(1).map((src, i) => {
+              {w.images.slice(w.top ?? 1).map((src, i, arr) => {
                 const crop = CROPS[src];
+                const isFullBody = w.fullBodyLast && i === arr.length - 1;
                 return (
                   <Reveal key={i} delay={i * 60}>
-                    <div className="overflow-hidden aspect-square">
+                    <div
+                      className={`overflow-hidden ${
+                        isFullBody ? "aspect-[3/4]" : "aspect-square"
+                      }`}
+                    >
                       <div
                         className="h-full w-full"
                         style={
@@ -191,7 +211,7 @@ function Weddings() {
                       >
                         <img
                           src={src}
-                          alt={`${w.couple} — ${i + 2}`}
+                          alt={`${w.couple} — ${i + (w.top ?? 1) + 1}`}
                           loading="lazy"
                           style={
                             crop?.objectPosition

@@ -6,7 +6,7 @@ import { Reveal } from "@/components/Reveal";
 import { Parallax } from "@/components/Parallax";
 import { WordReveal } from "@/components/WordReveal";
 import hero from "@/assets/rev-1-img.jpg";
-import wedding1 from "@/assets/ANDARA-9158.jpg";
+import wedding1 from "@/assets/vanny-wawan (3).jpg";
 import wedding2 from "@/assets/RYZ_0515.jpg";
 
 if (typeof window !== "undefined") {
