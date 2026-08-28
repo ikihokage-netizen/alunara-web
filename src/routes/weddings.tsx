@@ -37,9 +37,17 @@ export const Route = createFileRoute("/weddings")({
   head: () => ({
     meta: [
       { title: "Weddings — Alunara" },
-      { name: "description", content: "A curated portfolio of intimate, editorial, and timeless weddings by Alunara." },
+      {
+        name: "description",
+        content:
+          "A curated portfolio of intimate, editorial, and timeless weddings by Alunara.",
+      },
       { property: "og:title", content: "Weddings — Alunara Portfolio" },
-      { property: "og:description", content: "Four love stories, told quietly through cinematic celebrations." },
+      {
+        property: "og:description",
+        content:
+          "Four love stories, told quietly through cinematic celebrations.",
+      },
     ],
   }),
   component: Weddings,
@@ -88,6 +96,19 @@ const WEDDINGS: Wedding[] = [
   },
 ];
 
+type Crop = {
+  zoom?: number;
+  objectPosition?: string;
+};
+
+const CROPS: Record<string, Crop> = {
+  [vw1]: { zoom: 1.24, objectPosition: "47% 42%" },
+  [vw3]: { zoom: 1.18, objectPosition: "48% 40%" },
+  [fd6]: { zoom: 1.08, objectPosition: "50% 30%" },
+  [ad1]: { zoom: 1.12, objectPosition: "50% 32%" },
+  [ic1]: { zoom: 1.16, objectPosition: "45% 38%" },
+};
+
 function Weddings() {
   return (
     <>
@@ -116,11 +137,17 @@ function Weddings() {
                   </p>
                 </div>
                 <div className="md:col-span-6">
-                  <p className="eyebrow mb-3">{w.date} · {w.venue}</p>
-                  <h2 className="font-serif text-4xl md:text-6xl leading-tight">{w.couple}</h2>
+                  <p className="eyebrow mb-3">
+                    {w.date} · {w.venue}
+                  </p>
+                  <h2 className="font-serif text-4xl md:text-6xl leading-tight">
+                    {w.couple}
+                  </h2>
                 </div>
                 <div className="md:col-span-5">
-                  <p className="text-lg leading-relaxed text-muted-foreground">{w.story}</p>
+                  <p className="text-lg leading-relaxed text-muted-foreground">
+                    {w.story}
+                  </p>
                 </div>
               </div>
             </Reveal>
@@ -139,13 +166,33 @@ function Weddings() {
                   "col-span-1 md:col-span-2 aspect-square",
                   "col-span-1 md:col-span-2 aspect-square",
                 ];
+                const crop = CROPS[src];
                 return (
-                  <Reveal key={i} delay={i * 60} className={spans[i % spans.length]}>
-                    <div className="overflow-hidden h-full w-full">
+                  <Reveal
+                    key={i}
+                    delay={i * 60}
+                    className={spans[i % spans.length]}
+                  >
+                    <div
+                      className="overflow-hidden h-full w-full"
+                      style={
+                        crop?.zoom
+                          ? {
+                              transform: `scale(${crop.zoom})`,
+                              transformOrigin: "center",
+                            }
+                          : undefined
+                      }
+                    >
                       <img
                         src={src}
                         alt={`${w.couple} — ${i + 1}`}
                         loading="lazy"
+                        style={
+                          crop?.objectPosition
+                            ? { objectPosition: crop.objectPosition }
+                            : undefined
+                        }
                         className="w-full h-full object-cover transition-transform duration-[2000ms] hover:scale-105"
                       />
                     </div>

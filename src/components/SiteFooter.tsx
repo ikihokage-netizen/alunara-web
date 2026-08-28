@@ -9,7 +9,9 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-14">
           <div className="md:col-span-5">
             <Parallax speed={-25}>
-              <h3 className="font-serif text-4xl md:text-5xl tracking-[0.15em]">ALUNARA</h3>
+              <h3 className="font-serif text-4xl md:text-5xl tracking-[0.15em]">
+                ALUNARA
+              </h3>
             </Parallax>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-ivory/70 font-serif italic">
               Crafting memories that last forever
@@ -22,11 +24,31 @@ export function SiteFooter() {
           <div className="md:col-span-3">
             <p className="eyebrow text-ivory/50 mb-5">Explore</p>
             <ul className="space-y-3 font-serif text-lg">
-              <li><Link to="/" className="link-underline">Home</Link></li>
-              <li><Link to="/about" className="link-underline">About</Link></li>
-              <li><Link to="/services" className="link-underline">Services</Link></li>
-              <li><Link to="/weddings" className="link-underline">Weddings</Link></li>
-              <li><Link to="/inquiry" className="link-underline">Inquire</Link></li>
+              <li>
+                <Link to="/" className="link-underline">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="link-underline">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="link-underline">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/weddings" className="link-underline">
+                  Weddings
+                </Link>
+              </li>
+              <li>
+                <Link to="/inquiry" className="link-underline">
+                  Inquire
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -34,12 +56,18 @@ export function SiteFooter() {
             <p className="eyebrow text-ivory/50 mb-5">Contact</p>
             <ul className="space-y-3 text-sm text-ivory/80">
               <li>
-                <a href="https://wa.me/6287858461888" className="link-underline">
+                <a
+                  href="https://wa.me/6287858461888"
+                  className="link-underline"
+                >
                   +62 878-5846-1888
                 </a>
               </li>
               <li>
-                <a href="mailto:alunaramoment@gmail.com" className="link-underline">
+                <a
+                  href="mailto:alunaramoment@gmail.com"
+                  className="link-underline"
+                >
                   alunaramoment@gmail.com
                 </a>
               </li>
@@ -47,13 +75,25 @@ export function SiteFooter() {
             </ul>
 
             <div className="mt-8 flex items-center gap-5 text-ivory/70">
-              <a href="https://instagram.com/alunara.moment" aria-label="Instagram" className="hover:text-ivory transition-colors">
+              <a
+                href="https://instagram.com/alunara.moment"
+                aria-label="Instagram"
+                className="hover:text-ivory transition-colors"
+              >
                 <Instagram size={18} />
               </a>
-              <a href="https://tiktok.com/@alunara.moment" aria-label="TikTok" className="hover:text-ivory transition-colors text-xs uppercase tracking-[0.3em]">
+              <a
+                href="https://tiktok.com/@alunara.moment"
+                aria-label="TikTok"
+                className="hover:text-ivory transition-colors text-xs uppercase tracking-[0.3em]"
+              >
                 TikTok
               </a>
-              <a href="#" aria-label="Facebook" className="hover:text-ivory transition-colors">
+              <a
+                href="https://facebook.com/alunara.moment"
+                aria-label="Facebook"
+                className="hover:text-ivory transition-colors"
+              >
                 <Facebook size={18} />
               </a>
             </div>

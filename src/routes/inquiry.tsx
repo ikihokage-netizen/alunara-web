@@ -7,9 +7,16 @@ export const Route = createFileRoute("/inquiry")({
   head: () => ({
     meta: [
       { title: "Inquire — Alunara" },
-      { name: "description", content: "Begin your journey with Alunara. Share your vision and we'll be in touch within 48 hours." },
+      {
+        name: "description",
+        content:
+          "Begin your journey with Alunara. Share your vision and we'll be in touch within 48 hours.",
+      },
       { property: "og:title", content: "Inquire — Alunara" },
-      { property: "og:description", content: "Let's create something meaningful together." },
+      {
+        property: "og:description",
+        content: "Let's create something meaningful together.",
+      },
     ],
   }),
   component: Inquiry,
@@ -20,10 +27,10 @@ function Inquiry() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     const form = e.currentTarget;
     const formData = new FormData(form);
-    
+
     // Ambil semua nilai dari form
     const name = (formData.get("name") as string) || "-";
     const partner = (formData.get("partner") as string) || "-";
@@ -35,9 +42,9 @@ function Inquiry() {
     const ig = (formData.get("ig") as string) || "-";
     const vision = (formData.get("vision") as string) || "-";
     const moodboard = (formData.get("moodboard") as string) || "-";
-    
+
     // Format pesan WhatsApp (URL encode sudah dilakukan dengan template literal, tapi perlu encodeURIComponent)
-    const message = 
+    const message =
       `*New Inquiry from Alunara Website*%0a%0a` +
       `*Name:* ${encodeURIComponent(name)}%0a` +
       `*Partner:* ${encodeURIComponent(partner)}%0a` +
@@ -49,13 +56,13 @@ function Inquiry() {
       `*Instagram:* ${encodeURIComponent(ig)}%0a%0a` +
       `*Vision:* ${encodeURIComponent(vision)}%0a%0a` +
       `*Moodboard:* ${encodeURIComponent(moodboard)}`;
-    
+
     const phoneNumber = "6287858461888";
     const waLink = `https://wa.me/${phoneNumber}?text=${message}`;
-    
+
     // Buka WhatsApp (new tab)
     window.open(waLink, "_blank");
-    
+
     // Tampilkan ucapan terima kasih di halaman
     setSubmitted(true);
   };
@@ -67,10 +74,12 @@ function Inquiry() {
           <Reveal>
             <p className="eyebrow text-clay mb-8">— Inquire —</p>
             <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl leading-[1.05]">
-              Let's create something <em className="text-clay">meaningful</em> together.
+              Let's create something <em className="text-clay">meaningful</em>{" "}
+              together.
             </h1>
             <p className="mt-10 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl">
-              Thank you for considering Alunara. Share a little about your celebration below, and we'll respond personally within 48 hours.
+              Thank you for considering Alunara to be part of your celebration.
+              Share us a little about your vision, we'll be in touch shortly.
             </p>
           </Reveal>
         </div>
@@ -81,10 +90,14 @@ function Inquiry() {
           {submitted ? (
             <Reveal>
               <div className="border-t border-border pt-20 text-center">
-                <p className="font-serif italic text-clay text-2xl">— With gratitude —</p>
-                <h2 className="font-serif text-4xl md:text-6xl mt-6">Your message has landed.</h2>
+                <p className="font-serif italic text-clay text-2xl">
+                  — With gratitude —
+                </p>
+                <h2 className="font-serif text-4xl md:text-6xl mt-6">
+                  Your message has landed.
+                </h2>
                 <p className="mt-8 text-muted-foreground text-lg">
-                  We'll be in touch personally within 48 hours.
+                  We'll be in touch shortly.
                 </p>
               </div>
             </Reveal>
@@ -96,15 +109,30 @@ function Inquiry() {
               >
                 <Field label="Full Name" name="name" required />
                 <Field label="Partner's Name" name="partner" required />
-                <Field label="Event Type" name="event" placeholder="Wedding, proposal, anniversary…" required />
+                <Field
+                  label="Event Type"
+                  name="event"
+                  placeholder="Wedding, proposal, anniversary…"
+                  required
+                />
                 <Field label="Event Date" name="date" type="date" />
                 <Field label="Venue / Location" name="venue" />
-                <Field label="Estimated Guest Count" name="guests" type="number" />
-                <Field label="Budget Range" name="budget" placeholder="Comfort range in IDR or USD" />
+                <Field
+                  label="Estimated Guest Count"
+                  name="guests"
+                  type="number"
+                />
+                <Field
+                  label="Budget Range"
+                  name="budget"
+                  placeholder="Comfort range in IDR or USD"
+                />
                 <Field label="Instagram Handle" name="ig" placeholder="@" />
 
                 <div className="md:col-span-2">
-                  <label className="label-line">Tell us about your celebration</label>
+                  <label className="label-line">
+                    Tell us about your celebration
+                  </label>
                   <textarea
                     rows={5}
                     name="vision"
@@ -114,12 +142,17 @@ function Inquiry() {
                 </div>
 
                 <div className="md:col-span-2">
-                  <Field label="Moodboard Link" name="moodboard" placeholder="Pinterest, drive, anywhere…" />
+                  <Field
+                    label="Moodboard Link"
+                    name="moodboard"
+                    placeholder="Pinterest, drive, anywhere…"
+                  />
                 </div>
 
                 <div className="md:col-span-2 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pt-8 border-t border-border">
                   <p className="text-sm text-muted-foreground max-w-md">
-                    By sending this, you trust us with your story. We hold it gently.
+                    By sending this, you trust us with your story. We hold it
+                    gently.
                   </p>
                   <button type="submit" className="btn-line">
                     Send Inquiry
@@ -140,7 +173,8 @@ function Inquiry() {
               Prefer a more personal conversation?
             </h2>
             <p className="mt-8 text-ivory/70 text-lg">
-              Reach us directly on WhatsApp — we love a real conversation.
+              Connect with us directly through WhatsApp for inquiries,
+              availability, and consultation.
             </p>
             <div className="mt-12">
               <a

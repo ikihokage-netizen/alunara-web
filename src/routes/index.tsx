@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Reveal } from "@/components/Reveal";
 import { Parallax } from "@/components/Parallax";
 import { WordReveal } from "@/components/WordReveal";
-import hero from "@/assets/Gemini_Generated_Image-01.jpg";
+import hero from "@/assets/rev-1-img.jpg";
 import wedding1 from "@/assets/ANDARA-9158.jpg";
 import wedding2 from "@/assets/RYZ_0515.jpg";
 
@@ -17,7 +17,11 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Alunara — Modern Luxury Wedding Planner" },
-      { name: "description", content: "Crafting memories that last forever. Booking limited intimate celebrations for 2026." },
+      {
+        name: "description",
+        content:
+          "Crafting memories that last forever. Booking limited intimate celebrations for 2026.",
+      },
     ],
   }),
   component: Index,
@@ -25,19 +29,23 @@ export const Route = createFileRoute("/")({
 
 const TESTIMONIALS = [
   {
-    quote: "we dont have time to plan our wedding AT ALL cause we're both too busy with our work. It's a very tight deadline for us, 10 days before the wedding day, we found Alunara; they plan it and save the day. Proven they're so good",
+    quote:
+      "we dont have time to plan our wedding AT ALL cause we're both too busy with our work. It's a very tight deadline for us, 10 days before the wedding day, we found Alunara; they plan it and save the day. Proven they're so good",
     author: "Farah & Dhiska",
   },
   {
-    quote: "Thank you for being with us from the beginning of 'seeking' to the moment we cannot describe; we really are grateful for everything.Never regret getting to know Alunara, honestly feels like finding new friends. Thank you for always reminding us to stay 'awake' while you were also trying to do so. Good luck for the next bride, anyone!",
+    quote:
+      "Thank you for being with us from the beginning of 'seeking' to the moment we cannot describe; we really are grateful for everything.Never regret getting to know Alunara, honestly feels like finding new friends. Thank you for always reminding us to stay 'awake' while you were also trying to do so. Good luck for the next bride, anyone!",
     author: "Ara & Duan",
   },
   {
-    quote: "Alunara gave us best vendors of all time! Very much friendly not just to us as the bride&groom, but also to those who works with them. Shoutout to all the vendor and crew for making our wedding go crazy! You all crushed it- couldn't have done it without you! You guys killed it! p.s. let's hangout sometimes.",
+    quote:
+      "Alunara gave us best vendors of all time! Very much friendly not just to us as the bride&groom, but also to those who works with them. Shoutout to all the vendor and crew for making our wedding go crazy! You all crushed it- couldn't have done it without you! You guys killed it! p.s. let's hangout sometimes.",
     author: "Vanny & Wawan",
   },
   {
-    quote: "A million thank yous for Alunara! We haven’t even reached the wedding day yet, but just from being accompanied through our prewed, fitting session, and decor meetings alone, it has already been this fun and memorable best wedding planner EVER. truly dedicated to Alunara, we love you guys so much see you in September!",
+    quote:
+      "A million thank yous for Alunara! We haven’t even reached the wedding day yet, but just from being accompanied through our prewed, fitting session, and decor meetings alone, it has already been this fun and memorable best wedding planner EVER. truly dedicated to Alunara, we love you guys so much see you in September!",
     author: "The September bride-to-be",
   },
 ];
@@ -64,7 +72,7 @@ function Index() {
               end: "bottom top",
               scrub: true,
             },
-          }
+          },
         );
       }
 
@@ -82,7 +90,7 @@ function Index() {
               end: "bottom top",
               scrub: true,
             },
-          }
+          },
         );
       }
     });
@@ -92,7 +100,10 @@ function Index() {
   return (
     <>
       {/* HERO */}
-      <section ref={heroSectionRef} className="relative h-[100svh] w-full overflow-hidden">
+      <section
+        ref={heroSectionRef}
+        className="relative h-[100svh] w-full overflow-hidden"
+      >
         <img
           ref={heroImgRef}
           src={hero}
@@ -112,18 +123,22 @@ function Index() {
               Alunara
             </h1>
             <p className="mt-8 font-serif italic text-xl md:text-2xl text-ivory/90 max-w-2xl mx-auto">
-              Crafting Memories That Last Forever
+              For your once in a lifetime
             </p>
 
             <p className="mt-4 text-[8px] md:text-xs uppercase tracking-[0.45em] text-ivory/70">
-               Thoughtfully Curated, Emotionally Intimate, and Beautifully Timeless
+              Thoughtfully Curated, Emotionally Intimate, and Beautifully
+              Timeless
             </p>
 
             <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link to="/weddings" className="btn-ghost-line">
                 Explore Weddings
               </Link>
-              <Link to="/inquiry" className="btn-ghost-line bg-ivory text-charcoal hover:bg-transparent hover:text-ivory">
+              <Link
+                to="/inquiry"
+                className="btn-ghost-line bg-ivory text-charcoal hover:bg-transparent hover:text-ivory"
+              >
                 Inquire Now
               </Link>
             </div>
@@ -146,7 +161,9 @@ function Index() {
             stagger={0.045}
             className="font-serif text-2xl md:text-4xl lg:text-5xl leading-[1.25] tracking-[-0.01em] text-foreground"
           >
-            At Alunara, we believe every celebration should feel deeply personal — just as meaningful as they are beutiful. Because to us, the most beatiful celebrations are the ones that feel genuinely yours  .
+            At Alunara, we believe every celebration should feel deeply personal
+            — just as meaningful as they are beutiful. Because to us, the most
+            beatiful celebrations are the ones that feel genuinely yours .
           </WordReveal>
         </div>
       </section>
@@ -165,7 +182,10 @@ function Index() {
                   Recent Love Stories
                 </h2>
               </div>
-              <Link to="/weddings" className="hidden md:inline-flex link-underline text-[11px] uppercase tracking-[0.3em]">
+              <Link
+                to="/weddings"
+                className="hidden md:inline-flex link-underline text-[11px] uppercase tracking-[0.3em]"
+              >
                 View all weddings
               </Link>
             </div>
@@ -181,14 +201,19 @@ function Index() {
                     width={1280}
                     height={1600}
                     loading="lazy"
-                    className="w-full aspect-[4/5] object-cover transition-transform duration-[2000ms] group-hover:scale-105"
+                    className="w-full aspect-[4/5] object-cover object-[50%_30%] scale-105 transition-transform duration-[2000ms] group-hover:scale-[1.12]"
                   />
                 </Parallax>
                 <div className="mt-8">
-                  <p className="eyebrow text-clay">25 November 2025 · La Tare Joglo</p>
-                  <h3 className="font-serif text-3xl md:text-4xl mt-3">Vanny & Wawan</h3>
+                  <p className="eyebrow text-clay">
+                    25 November 2025 · La Tare Joglo
+                  </p>
+                  <h3 className="font-serif text-3xl md:text-4xl mt-3">
+                    Vanny & Wawan
+                  </h3>
                   <p className="mt-4 text-muted-foreground max-w-md leading-relaxed">
-                    Modern Heritage Reception - An intimate evening celebration where modern elegance meets timeless cultural details.
+                    Modern Heritage Reception - An intimate evening celebration
+                    where modern elegance meets timeless cultural details.
                   </p>
                 </div>
               </Link>
@@ -207,10 +232,15 @@ function Index() {
                   />
                 </Parallax>
                 <div className="mt-8">
-                  <p className="eyebrow text-clay">14 December 2025 · Dapur Galuh Resto</p>
-                  <h3 className="font-serif text-3xl md:text-4xl mt-3">Ara & Duan</h3>
+                  <p className="eyebrow text-clay">
+                    14 December 2025 · Dapur Galuh Resto
+                  </p>
+                  <h3 className="font-serif text-3xl md:text-4xl mt-3">
+                    Ara & Duan
+                  </h3>
                   <p className="mt-4 text-muted-foreground max-w-md leading-relaxed">
-                    Intimate Garden Celebration - A romantic sunrise wedding surrounded by their closest people.
+                    Intimate Garden Celebration - A romantic sunrise wedding
+                    surrounded by their closest people.
                   </p>
                 </div>
               </Link>
@@ -252,9 +282,16 @@ function Index() {
               <Reveal key={s.n} delay={i * 120}>
                 <div className="p-10 lg:p-14 border-b md:border-b-0 md:border-r border-border last:border-r-0 h-full group hover:bg-sand/40 transition-colors duration-700">
                   <p className="font-serif italic text-clay text-2xl">{s.n}</p>
-                  <h3 className="font-serif text-2xl md:text-3xl mt-6">{s.t}</h3>
-                  <p className="mt-5 text-muted-foreground leading-relaxed">{s.d}</p>
-                  <Link to="/services" className="mt-10 inline-flex link-underline text-[11px] uppercase tracking-[0.3em]">
+                  <h3 className="font-serif text-2xl md:text-3xl mt-6">
+                    {s.t}
+                  </h3>
+                  <p className="mt-5 text-muted-foreground leading-relaxed">
+                    {s.d}
+                  </p>
+                  <Link
+                    to="/services"
+                    className="mt-10 inline-flex link-underline text-[11px] uppercase tracking-[0.3em]"
+                  >
                     Discover →
                   </Link>
                 </div>
@@ -292,7 +329,6 @@ function Index() {
 
       {/* BOTTOM CTA */}
       <section className="relative py-32 lg:py-48 bg-ivory overflow-hidden">
-       
         <div className="container-editorial relative">
           <Reveal>
             <div className="max-w-3xl">
@@ -301,7 +337,8 @@ function Index() {
                 Now booking intimate celebrations for 2026.
               </h2>
               <p className="mt-10 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
-                 We intentionally accept a limited number of weddings each year to ensure every couple receives our fullest attention.
+                We intentionally accept a limited number of weddings each year
+                to ensure every couple receives our fullest attention.
               </p>
               <div className="mt-14">
                 <Link to="/inquiry" className="btn-line">
