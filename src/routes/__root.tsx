@@ -12,6 +12,7 @@ import appCss from "../styles.css?url";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+import { BackgroundMusic } from "@/components/BackgroundMusic";
 import { SmoothScroll } from "@/components/SmoothScroll";
 
 function NotFoundComponent() {
@@ -119,6 +120,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <SmoothScroll />
+      <BackgroundMusic />
       <SiteHeader />
       <main className="min-h-screen">
         <Outlet />
