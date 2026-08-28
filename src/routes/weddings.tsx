@@ -58,6 +58,7 @@ type Wedding = {
   date: string;
   venue: string;
   story: string;
+  caption?: string;
   images: string[];
 };
 
@@ -68,6 +69,7 @@ const WEDDINGS: Wedding[] = [
     venue: "Pooldeck Grand Qin Hotel",
     story:
       "A sacred daytime akad on the Grand Qin pooldeck — sunlight filtering through ivory drapery, the quiet weight of vows exchanged, and the tender warmth of family witnessing two souls bound in faith.",
+    caption: "Before the moment begins",
     images: [ic1, ic2, ic3, ic4, ic5, ic6, ic7, ic8, ic9],
   },
   {
@@ -92,6 +94,7 @@ const WEDDINGS: Wedding[] = [
     venue: "Swiss Belhotel Borneo",
     story:
       "A graceful daytime celebration held within the timeless interiors of Swiss Belhotel Borneo — soft florals, ivory linens, and the gentle hum of family gathered close.",
+    caption: "Officially forever",
     images: [fd1, fd2, fd3, fd4, fd5, fd6, fd7],
   },
 ];
@@ -152,43 +155,52 @@ function Weddings() {
               </div>
             </Reveal>
 
-            {/* Photo grid */}
-            <div className="grid grid-cols-2 md:grid-cols-6 gap-3 md:gap-5">
-              {w.images.map((src, i) => {
-                const isHero = i === 0;
+            {/* Featured photo + grid */}
+            <Reveal>
+              <div className="flex justify-center">
+                <img
+                  src={w.images[0]}
+                  alt={`${w.couple} — featured`}
+                  loading="lazy"
+                  className="h-auto max-h-[85vh] w-auto max-w-full"
+                />
+              </div>
+              {w.caption ? (
+                <p className="mt-8 text-center text-[10px] uppercase tracking-[0.4em] text-muted-foreground">
+                  {w.caption}
+                </p>
+              ) : null}
+            </Reveal>
+
+            <div className="mt-16 md:mt-24 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+              {w.images.slice(1).map((src, i) => {
                 const crop = CROPS[src];
                 return (
-                  <Reveal
-                    key={i}
-                    delay={i * 60}
-                    className={
-                      isHero
-                        ? "col-span-2 md:col-span-6 aspect-[16/10] md:aspect-[21/10]"
-                        : "col-span-1 md:col-span-2 aspect-square"
-                    }
-                  >
-                    <div
-                      className="overflow-hidden h-full w-full"
-                      style={
-                        crop?.zoom
-                          ? {
-                              transform: `scale(${crop.zoom})`,
-                              transformOrigin: "center",
-                            }
-                          : undefined
-                      }
-                    >
-                      <img
-                        src={src}
-                        alt={`${w.couple} — ${i + 1}`}
-                        loading="lazy"
+                  <Reveal key={i} delay={i * 60}>
+                    <div className="overflow-hidden aspect-square">
+                      <div
+                        className="h-full w-full"
                         style={
-                          crop?.objectPosition
-                            ? { objectPosition: crop.objectPosition }
+                          crop?.zoom
+                            ? {
+                                transform: `scale(${crop.zoom})`,
+                                transformOrigin: "center",
+                              }
                             : undefined
                         }
-                        className="w-full h-full object-cover transition-transform duration-[2000ms] hover:scale-105"
-                      />
+                      >
+                        <img
+                          src={src}
+                          alt={`${w.couple} — ${i + 2}`}
+                          loading="lazy"
+                          style={
+                            crop?.objectPosition
+                              ? { objectPosition: crop.objectPosition }
+                              : undefined
+                          }
+                          className="w-full h-full object-cover transition-transform duration-[2000ms] hover:scale-105"
+                        />
+                      </div>
                     </div>
                   </Reveal>
                 );
